@@ -2,13 +2,13 @@
 #include <iostream>
 #include <clocale>
 using namespace std;
-double my_pow(double a, unsigned int b);
+double my_pow(double a, int b);
 
 int main()
 {
     setlocale(LC_ALL, "Russian");
     double a;
-    unsigned int b;
+    int b;
     cout << "Введите дробное число" << endl;
     cin >> a;
     cout << "Введи степень, в которую будете возводить число " << endl;
@@ -16,7 +16,7 @@ int main()
     my_pow(a, b);
 }
 
-double my_pow(double a, unsigned int b)
+double my_pow(double a, int b)
 {
     double c = a;
     for (int i = 1; i < b; i++)
