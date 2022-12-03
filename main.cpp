@@ -18,20 +18,26 @@ int main()
     cin >> a;
     cout << "Введи степень, в которую будете возводить число " << endl;
     cin >> b;
-    my_pow(a, b);
+    cout << my_pow(a, b); << endl;
     cout << BinaryPower(a, b) << endl;
     cout << FastPowerDividing(a, b) << endl;
 }
 
 double my_pow(double a, int b)
 {
-    double c = a;
-    for (int i = 1; i < b; i++)
+    double result = 1;
+    int loop_ends;
+    if (b < 0)
+        loop_ends = -1 * b;
+    else
+        loop_ends = b;
+    for (int i = 0; i < loop_ends; i++)
     {
-        a = a * c;
+        result *= a;
     }
-    cout << a << endl;
-    return 1;
+    if (b < 0)
+        result = 1 / result;
+    return result;
 }
 
 double OldApproximatePower(double b, double e) {
